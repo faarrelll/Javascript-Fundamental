@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Halo</div>
+    <script>
+      const username = prompt("Masukan username:");
+      alert("Welcome " + username);
+
+      const answer = prompt("masukan jawaban");
+      switch (answer) {
+        case "A": // ' ' sama aja dengan " "
+          alert("benar");
+          console.log("Benar");
+          break;
+        case "B":
+          alert("salah");
+          console.log("Salah");
+        default:
+            alert("salah boy")
+          break;
+      }
+    </script>
+  </body>
+</html>

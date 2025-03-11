@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root">
+            <h1>Hello World</h1>
+            <p class="paragraph">Ini adalah paragraf pertama</p>
+            <p class="paragraph">Ini adalah paragraf kedua</p>
+            <p id="third_paragraph">Ini adalah paragraf Ketiga</p>
+            <button id="btn" onclick="ubahKonten('third_paragraph')">
+                ubah isi paragraph ketiga
+            </button>
+            <button id="second_button">click akan berubah jadi merah</button>
+        </div>
+        <script>
+            var isHover = false;
+            // get element
+            // dom selector id, akses elemen dengan id
+            const divElement = document.getElementById("root");
+            console.log("divElement", divElement);
+
+            // dom selector class, akses element dengan class name
+            const paragraphs = document.getElementsByClassName("paragraph");
+            console.log("paragraph", paragraphs[0]);
+            console.log("paragraph", paragraphs[1]);
+
+            const thridParagraph = document.querySelector("#third_paragraph");
+            console.log(thridParagraph);
+            //------------------------------------------------
+            // set element
+
+            // DOM Event atau event handler function
+            function ubahKonten(id) {
+                const element = document.getElementById(id);
+                element.innerText = "berubah oyy";
+            }
+
+            // DOM Event listener
+            // Event listener akan dipasang ke element yang dimauu
+            // Listener = mendengarkan, atau dalam konteks ini mengawasi jika ada event tertentu yang ketrigger
+            const secondButton = document.getElementById("second_button");
+            //nambahin event listener
+            secondButton.addEventListener(
+                "mouseover",
+                function onMouseOver() {
+                    if (isHover) {
+                        secondButton.setAttribute(
+                            "style",
+                            "background-color: initial"
+                        );
+                        isHover = false;
+                        console.log(isHover)
+                    } else {
+                        secondButton.setAttribute(
+                            "style",
+                            "background-color: red"
+                        );
+                        isHover = true;
+                        console.log(isHover)
+                    }
+                }
+            );
+            
+        </script>
+    </body>
+</html>

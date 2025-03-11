@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            body {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
+            .container {
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                
+                gap: 10px;
+                width: 300px;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                box-sizing: border-box;
+            }
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            button {
+                padding: 10px;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input {
+                padding: 10px;
+                border: 1px solid #000;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="" method="post" id="form">
+                <label for="username">username</label>
+                <input type="text" name="username" id="username" />
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" />
+                <button type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
+        <script>
+            const formElement = document.getElementById("form");
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+
+            formElement.onsubmit = function loginSubmitHandler (event) {
+                event.preventDefault();
+                console.log("DEBUG",{
+                    event,
+                    username: usernameInput.value,
+                    password: passwordInput.value,
+                })
+            };
+        </script>
+    </body>
+</html>
